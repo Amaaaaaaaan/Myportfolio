@@ -24,7 +24,9 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 99999999;
+  position: absolute;
 }
+
 
 
 .pl,
@@ -264,22 +266,22 @@ body {
 
 @media (max-width: 580px) {
   .navbar {
-    padding: 10px 15px;
     display: flex;
     width: 100vw;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
   }
 
 
   .nav-links {
-    margin-left: 0%;
+
+    gap: 20px;
   }
 
   .nav-links a {
     text-decoration: none;
     color: #c9cfe0;
-    font-size: 13px;
+    font-size: 0.8rem;
   }
 
   .nav-links a span {
@@ -586,7 +588,7 @@ body {
 
   .page1 h1 {
     font-size: 8vw; /* Adjusted font size for smaller screens */
-    margin-top: 84%; /* Adjusted margin to prevent overlap */
+    margin-top: 88%; /* Adjusted margin to prevent overlap */
   }
 
   .page1 h2 {
@@ -594,10 +596,13 @@ body {
   }
 
   .profilecontainer {
-    margin-top: -195%; /* Adjusted margin to center properly */
+    margin-top: -200%; /* Adjusted margin to center properly */
     height: 230px; /* Set to a reasonable height */
     width: 230px; /* Set to a reasonable width */
     
+  }
+  .skill .tailwind{
+margin-left: -5%;
   }
 
   .profile {
