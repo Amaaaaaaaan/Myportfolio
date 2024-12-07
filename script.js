@@ -292,9 +292,3 @@ contactBtn.addEventListener('click', function (e) {
   // Scroll to page4 smoothly
   page4.scrollIntoView({ behavior: 'smooth' });
 });
-
-// Optionally, you can use the window scroll event to highlight the active link, if you have a navigation menu
-window.addEventListener('scroll', function () {
-  // If you have a navigation link that should be highlighted, add your active class logic here
-  // For example, you can check if page4 is in view and highlight the corresponding nav link
-});
