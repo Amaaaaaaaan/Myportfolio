@@ -274,7 +274,9 @@ body {
     justify-content: start;
   }
 
- 
+ body{
+  width: 150vw;
+ }
 
   .nav-links {
     margin-left: 5%;
@@ -1283,10 +1285,11 @@ margin-left: 25%;
   .pjt2 {
     padding-left: 5%;
     padding-right: 5%;
+   
     border: 2px solid #64ffda;
-    width: 100%;
-    height: 100vh;
-    margin-left: 0;
+    width: 96%;
+    height: 110vh;
+    margin-left: 2%;
     flex-direction: column;
     margin-top: 15%;
     border-radius: 10px;
@@ -1428,7 +1431,7 @@ margin-left: 25%;
 
 .contact-container button{
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 10 px;
   border: 2px solid #64FFDA;
 }
 
@@ -1554,6 +1557,7 @@ button#submitBtn:hover {
     height: 80vh;
    padding-bottom: 20%;
   }
+
   .contact-container {
     padding: 20px;
     max-width: 400px;
