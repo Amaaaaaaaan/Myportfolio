@@ -315,7 +315,7 @@ body {
   z-index: 99999;
 }
 
-.socialicondesign i {
+.socialicondesign a {
   font-size: 1.5vw;
   color: #8892B0;
   /* Default color */
@@ -323,7 +323,7 @@ body {
   /* Smooth color and transform transition */
 }
 
-.socialicondesign i:hover {
+.socialicondesign a:hover {
   cursor: pointer;
   color: #64ffda;
   /* Hover color */
