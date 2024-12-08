@@ -23,8 +23,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 99999999;
-  position: absolute;
 }
 
 
@@ -163,6 +161,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 45px;
+  padding-top: 2%;
   /* Combines padding-top and left-right padding */
   height: 70px;
   background-color: #0a192f;
