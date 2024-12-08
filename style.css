@@ -795,6 +795,8 @@ margin-left: -5%;
 }
 
 /* Responsive Styles */
+
+/* Styles for screens up to 1200px wide */
 @media (max-width: 1200px) {
   .skills-title {
     font-size: 2.5rem;
@@ -817,6 +819,7 @@ margin-left: -5%;
   }
 }
 
+/* Styles for screens up to 768px wide */
 @media (max-width: 768px) {
   .skills-title {
     font-size: 2rem;
@@ -839,46 +842,44 @@ margin-left: -5%;
   }
 }
 
+/* Styles for screens up to 480px wide */
 @media (max-width: 480px) {
- 
   .page2 {
     z-index: 10;
     display: flex;
-    height: 100vh;
-    margin-top: -10%;
+    height: 80vh;
     width: 100vw;
+    margin-top: -20%;
     align-items: center;
     justify-content: center;
-    
   }
 
   .skills-title {
-    font-size: 1.2rem;
-    /* Adjust title size for smaller screens */
+    font-size: 1.2rem; /* Adjusted title size for smaller screens */
   }
 
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-    /* Show 3 cards in a row */
-    gap: 25px;
-    /* Adjust the gap between cards */
+    grid-template-columns: repeat(3, 1fr); /* Show 3 cards in a row */
+    gap: 15px; /* Adjusted gap between cards */
   }
 
   .skill {
-    padding:12px;
-    /* Reduce padding for smaller screens */
+    padding: 25px; /* Reduced padding for smaller screens */
   }
 
   .skill i {
-    font-size: 1.8rem;
-    /* Adjust icon size for smaller screens */
+    font-size: 1.8rem; /* Adjusted icon size for smaller screens */
   }
 
   .skill h3 {
-    font-size: 0.9rem;
-    /* Adjust text size for smaller screens */
+    font-size: 0.9rem; /* Adjusted text size for smaller screens */
+  }
+  .progress-bar {
+    width: 100%; /* Full width for smaller screens */
+    height: 6px; /* Adjusted progress bar height */
   }
 }
+
 
 
 
