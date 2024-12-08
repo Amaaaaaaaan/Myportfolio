@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
   // Navbar animation
   tl.from('.navbar', {
     opacity: 0,
-    y: -25,
+    y: -15,
     duration: 0.6,
     ease: 'power4.out',
   })
@@ -64,7 +64,7 @@ window.addEventListener('load', () => {
     .from('.profilecontainer', {
       opacity: 0,
       scale: 0.9,
-      duration: 0.6,
+      duration: 0.2,
       ease: 'power4.out',
     }, 'sh') // Aligned with page elements
 
@@ -72,7 +72,7 @@ window.addEventListener('load', () => {
     .from('.contact', {
       opacity: 0,
       scale: 0.8,
-      duration: 0.6,
+      duration: 0.2,
       ease: 'power4.out',
     }, 'sh') // Slightly after profile container
 
