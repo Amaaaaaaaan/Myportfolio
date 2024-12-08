@@ -2,158 +2,97 @@ document.addEventListener("DOMContentLoaded", () => {
   const loader = document.querySelector('.loader');
   const body = document.body;
 
-  // Disable scrolling
+  // Disable scrolling while loading
   body.style.overflow = 'hidden';
 
-  // Simulate content loading (e.g., 3 seconds delay)
+  // Loader animation and removal
   setTimeout(() => {
-    // Slide the loader up by changing its style
     loader.style.transform = 'translateY(-100%)';
     loader.style.opacity = '0';
     loader.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
 
-    // Optional: Remove the loader from the DOM after the animation is complete
     setTimeout(() => {
-      loader.style.display = 'none';
-      // Enable scrolling
-      body.style.overflowY = 'auto';
-    }, 800); // Match the duration of the transition
-  }, 2300); // Adjust this delay as per your content loading time
+      loader.remove(); // Completely remove loader
+      body.style.overflowY = 'auto'; // Enable scrolling
+    }, 800); // Match the transition duration
+  }, 2300);
 });
 
-
-// Wait for the document to load
 window.addEventListener('load', () => {
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-  
-    // Create a scroll trigger to hide the navbar when scrolling down
-    let lastScroll = 0; // Track last scroll position
-  
-    gsap.to('.navbar', {
-      yPercent: -100, // Slide the navbar up
-      scrollTrigger: {
-        trigger: '.navbar',
-        start: 'top top', // Trigger when the navbar hits the top
-        end: 'bottom top', // Trigger when the bottom of the navbar hits the top
-        scrub: true, // Smoothly animate as the user scrolls
-        toggleActions: 'play reverse play reverse', // Play animation on scroll down and reverse on scroll up
-        markers: false, // Set to true if you want to see markers for debugging
-      },
-    });
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Scroll-triggered navbar hide/show
+  gsap.to('.navbar', {
+    yPercent: -100,
+    scrollTrigger: {
+      trigger: '.navbar',
+      start: 'top top',
+      end: '+=200',
+      scrub: true,
+    },
   });
-  
 
-  window.addEventListener('load', () => {
-    gsap.registerPlugin(ScrollTrigger);
+  // Timeline for page animations
+  const tl = gsap.timeline({
+    delay: 2.5, // Align animations to start after the loader
+  });
 
-    // Animate navbar on page load
-    gsap.from('.navbar', {
+  // Navbar animation
+  tl.from('.navbar', {
+    opacity: 0,
+    y: -25,
+    duration: 0.6,
+    ease: 'power4.out',
+  })
+    .from('.nav-links li', {
       opacity: 0,
       y: -30,
-      duration: 0.5,
-      delay: 2.6,
+      stagger: 0.2,
       ease: 'power4.out',
-    });
+    }, '-=0.4') // Overlap slightly with navbar animation
 
-    // Animate other elements one by one (for example, items in the nav-links)
-    gsap.from('.nav-links li', {
+    // Page 1 elements (Headings, Paragraphs)
+    .from('.page1 h1, .page1 h2, .page1 h3, .page1 p', {
       opacity: 0,
-      y: -30,
-      duration: 0.4,
-      delay: 2.5, // Start after navbar animation
-      stagger: 0.3, // Delay between each item
+      y: 30,
+      duration: 0.7,
+      stagger: 0.2,
       ease: 'power4.out',
-    });
+    }, '-=0.2') // Slight overlap for smoother transition
 
+    // Profile container animation
+    .from('.profilecontainer', {
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.6,
+      ease: 'power4.out',
+    }, 'sh') // Aligned with page elements
 
-    gsap.from('.box', {
-        opacity: 0,
-        y: -30,
-        duration: 0.3,
-        delay: 0.1, // Adjust to start after nav-links
-        ease: 'power4.out',
-      },"sh");
+    // Contact section animation
+    .from('.contact', {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.6,
+      ease: 'power4.out',
+    }, 'sh') // Slightly after profile container
+
+    // Social icons
+    .from('.socialicondesign', {
+      opacity: 0,
+      y: 50,
+      stagger: 0.3,
+      duration: 0.6,
+      ease: 'power4.out',
+    }, '-=0.3')
+
+    // Email animation
+    .from('.email', {
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      ease: 'power4.out',
+    }, '-=0.4');
 });
-
-  
-    window.addEventListener('load', () => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Animate social icons
-    
-    // Animate page introduction (Hi, my name is ...)
-    gsap.from('.page1 h1', {
-      opacity: 0,
-      y: 30,
-      duration: 0.5,
-      delay: 0.1,
-      ease: 'power4.out',
-    },"aa");
-    gsap.from('.page1 h2', {
-      opacity: 0,
-      y: 30,
-      duration: 0.5,
-      delay: 0.1,
-      ease: 'power4.out',
-    },"aa");
-
-    // Animate animated text container (I am a developer)
-    gsap.from('.page1 h3', {
-      opacity: 0,
-      y: 30,
-      duration: 0.5,
-      delay: 0.1,
-      ease: 'power4.out',
-    },"aa");
-
-    // Animate paragraph text (description)
-    gsap.from('.page1 p', {
-      opacity: 0,
-      y: 30,
-      duration: 0.5,
-      delay: 0.1,
-      ease: 'power4.out',
-    },"aa");
-
-    // Animate "Contact me" button
-    gsap.from('.contact', {
-      opacity: 0,
-      scale: 0.2,
-      duration: 0.5,
-      delay: 0.1,
-      ease: 'power4.out',
-    },"aa");
-
-    // Animate profile section with background circles and image
-    gsap.from('.profilecontainer', {
-      opacity: 0,
-      scale: 0.3,
-      duration: 0.5,
-      delay: 0.1,
-      ease: 'power4.out',
-    },"aa");
-
-    gsap.from('.socialicondesign ', {
-        opacity: 0,
-        y: 65,
-        duration: 0.5,
-        stagger: 0.3,
-        delay: 0.2,
-        ease: 'power4.out',
-      },"aa");
-  
-      // Animate email section
-      gsap.from('.email ', {
-        opacity: 0,
-        y: 50,
-        duration: 0.5,
-        delay: 0.2,
-        ease: 'power4.out',
-      },"aa");
-  
-
-  });
 
 
   // Words to cycle through
@@ -214,26 +153,7 @@ window.addEventListener('load', () => {
 
 
 
-  // Initialize GSAP ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger);
-
-  let navbar = document.querySelector('.navbar');
-
-  // Create a ScrollTrigger instance
-  ScrollTrigger.create({
-    start: 'top top', // Trigger at the top of the page
-    end: 99999, // Keep the trigger active for the entire page
-    onUpdate: (self) => {
-      if (self.direction === -1) {
-        // Scroll up: Show navbar
-        gsap.to(navbar, { y: 0, duration: 0.3, ease: 'power2.out' });
-      } else {
-        // Scroll down: Hide navbar
-        gsap.to(navbar, { y: '-100%', duration: 0.3, ease: 'power2.out' });
-      }
-    },
-  });
-
+  
 
 
 
