@@ -23,6 +23,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 99;
 }
 
 
@@ -152,6 +153,7 @@ body {
 
 
 .navbar {
+  z-index: 98;
   position: fixed;
   /* Keeps the navbar fixed at the top */
   top: 0;
@@ -314,7 +316,8 @@ body {
   align-items: center;
   gap: 20px;
   position: fixed;
-  z-index: 99999;
+  z-index: 98;
+
 }
 
 .socialicondesign a {
@@ -352,7 +355,7 @@ body {
   align-items: center;
   gap: 105px;
   position: fixed;
-  z-index: 99999;
+  z-index: 98;
 }
 
 .email h1 {
@@ -370,6 +373,7 @@ body {
 
 /* General styles for large screens */
 .page1 {
+  z-index: 98;
   display: flex;
   flex-direction: column;
   padding-left: 270px;
