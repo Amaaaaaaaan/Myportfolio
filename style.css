@@ -578,6 +578,7 @@ body {
     height: 100vh; /* Set height to auto to prevent overflow */
     width: 100vw;
   }
+ 
 
   .page1 h1 {
     font-size: 8vw; /* Adjusted font size for smaller screens */
@@ -1279,7 +1280,7 @@ margin-left: -5%;
     padding-right: 5%;
     border: 2px solid #64ffda;
     width: 96%;
-    height: 72vh;
+    height: 74vh;
     margin-left: 2%;
     flex-direction: column;
     margin-top: 15%;
@@ -1353,7 +1354,7 @@ margin-left: -5%;
  display: flex;
  align-items: center;
  justify-content: center;
- font-weight: 400;
+ font-weight: 600;
 
   }
   .right2 .skills1 {
@@ -1364,7 +1365,7 @@ margin-left: -5%;
   }
   .right1 .skills1 h3{
     display: initial;
-    font-size: 1.1vh;
+    font-size: 1.3vh;
     font-weight: 400;
   }
   .right1 .skills1 h4{
