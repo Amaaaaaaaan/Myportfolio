@@ -581,7 +581,7 @@ body {
 
   .page1 h1 {
     font-size: 8vw; /* Adjusted font size for smaller screens */
-    margin-top: 88%; /* Adjusted margin to prevent overlap */
+    margin-top: 75%; /* Adjusted margin to prevent overlap */
   }
 
   .page1 h2 {
@@ -589,7 +589,7 @@ body {
   }
 
   .profilecontainer {
-    margin-top: -200%; /* Adjusted margin to center properly */
+    margin-top: -205%; /* Adjusted margin to center properly */
     height: 230px; /* Set to a reasonable height */
     width: 230px; /* Set to a reasonable width */
     
