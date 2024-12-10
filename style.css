@@ -845,12 +845,12 @@ margin-left: -5%;
   }
 
   .skills-title {
-    font-size: 1.2rem; /* Adjusted title size for smaller screens */
+    font-size: 1.5rem; /* Adjusted title size for smaller screens */
   }
 
   .skills-grid {
     grid-template-columns: repeat(3, 1fr); /* Show 3 cards in a row */
-    gap: 15px; /* Adjusted gap between cards */
+    gap: 10px; /* Adjusted gap between cards */
   }
 
   .skill {
@@ -1279,7 +1279,7 @@ margin-left: -5%;
     padding-right: 5%;
     border: 2px solid #64ffda;
     width: 96%;
-    height: 80vh;
+    height: 85vh;
     margin-left: 2%;
     flex-direction: column;
     margin-top: 15%;
