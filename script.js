@@ -14,66 +14,95 @@ window.onload = function () {
       document.getElementById('content').style.display = 'block';
       
       // Create a GSAP timeline for all animations with a 3-second delay
-      const tl = gsap.timeline({ delay: 0.2 }); // Delay added here
+      const tl = gsap.timeline({ delay: 0 }); // 0.2s delay before starting the animations
 
-      // Animating the elements one by one with GSAP
-      tl.from("#page1 h1", {
+      // Animating the navbar with stagger
+      tl.from(".navbar", {
         opacity: 0, 
-        y: 50, 
+        y: -10, 
         duration: 1, 
         ease: "power2.out"
-      },"sh")
+      })
+      
+      .from(".logo", {
+        opacity: 0, 
+        y: -20, 
+        duration: 0.8, 
+        stagger: 0.1, // Stagger each list item's animation by 0.1 seconds
+        ease: "power2.out"
+      }, "shh")
+      .from(".nav-links li", {
+        opacity: 0, 
+        y: -20, 
+        duration: 0.4, 
+        stagger: 0.1, // Stagger each list item's animation by 0.1 seconds
+        ease: "power2.out"
+      }, "shh")
+
+      .from(".box", {
+        opacity: 0, 
+        y: -20, 
+        duration: 0.4, 
+        stagger: 0.1, // Stagger each list item's animation by 0.1 seconds
+        ease: "power2.out"
+      }, "shh")
+         // Animating other page elements
+      .from("#page1 h1", {
+        opacity: 0, 
+        y: 50, 
+        duration: 0.5, 
+        ease: "power2.out"
+      }, "sh")
       .from("#page1 h2", {
         opacity: 0, 
         y: 50, 
-        duration: 1, 
+        duration: 0.5, 
         ease: "power2.out"
-      },"sh")
+      }, "sh")
       .from("#page1 h3", {
         opacity: 0, 
         y: 50, 
-        duration: 1, 
+        duration: 0.5, 
         ease: "power2.out"
-      },"sh")
+      }, "sh")
       .from("#page1 p", {
         opacity: 0, 
         y: 50, 
-        duration: 1, 
+        duration: 0.5, 
         ease: "power2.out"
-      },"sh")
-      
+      }, "sh")
       .from(".animated-text-container", {
         opacity: 0, 
         y: 50, 
-        duration: 1, 
+        duration: 0.5, 
         ease: "power2.out"
-      },"sh")
+      }, "sh")
       .from(".contact", {
         opacity: 0, 
         y: 50, 
-        duration: 1, 
+        duration: 0.5, 
         ease: "power2.out"
-      },"sh")
+      }, "sh")
       .from(".profilecontainer", {
         opacity: 0, 
         scale: 0.5, 
-        duration: 1, 
+        duration: 0.5, 
         ease: "power2.out"
-      },"sh")
+      }, "sh")
       .from(".socialicondesign", {
         opacity: 0, 
         scale: 0.5, 
-        duration: 1, 
+        duration: 0.5, 
         ease: "power2.out"
       }, "sh")
       .from(".email", {
         opacity: 0, 
         scale: 0.5, 
-        duration: 1, 
+        duration: 0.5, 
         ease: "power2.out"
-      }, "sh")
+      }, "sh");
     });
-  }, 3000); // 3 seconds delay before starting the animations
+  }, 2000); // 3 seconds delay before starting the animations
 };
 
 
