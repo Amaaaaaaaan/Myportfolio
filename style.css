@@ -15,21 +15,37 @@ body {
   font-family: Gilroy;
   background-color: #0a192f;
   color: #64ffda;
+  overflow-x: hidden;
 }
 
-.loader {
-  height: 100vh;
-  width: 100vw;
+#content{
+  display: none;
+}
+/* Loader container styles */
+.loader-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 99;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* High z-index to ensure it stays above other content */
+  background-color: #0a192f;
+  transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
 }
 
+/* Only apply the font-size scaling globally if necessary */
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue), 10%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  font-size: 16px; /* Default font size for other elements */
+}
 
-
-.pl,
-.pl__worm {
+/* SVG loader animation settings */
+.pl, .pl__worm {
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
@@ -42,80 +58,58 @@ body {
 }
 
 .pl__ring {
-  stroke: rgba(100, 255, 218, 0.1);
-  /* Adjusted for #64ffda */
+  stroke: hsla(var(--hue), 10%, 10%, 0.1);
+  transition: stroke 0.3s;
 }
 
 .pl__worm {
   animation-name: worm;
   animation-timing-function: cubic-bezier(0.42, 0.17, 0.75, 0.83);
-  stroke: url(#pl-grad);
-  /* Use gradient */
 }
 
-@keyframes bump {
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue), 10%, 10%);
+    --fg: hsl(var(--hue), 10%, 90%);
+  }
+  .pl__ring {
+    stroke: hsla(var(--hue), 10%, 90%, 0.1);
+  }
+}
 
-  from,
-  42%,
-  46%,
-  51%,
-  55%,
-  59%,
-  63%,
-  67%,
-  71%,
-  74%,
-  78%,
-  81%,
-  85%,
-  88%,
-  92%,
-  to {
+/* Animations */
+@keyframes bump {
+  from, 42%, 46%, 51%, 55%, 59%, 63%, 67%, 71%, 74%, 78%, 81%, 85%, 88%, 92%, to {
     transform: translate(0, 0);
   }
-
-  44% {
-    transform: translate(1.33%, 6.75%);
-  }
-
-  53% {
-    transform: translate(-16.67%, -0.54%);
-  }
-
-  61% {
-    transform: translate(3.66%, -2.46%);
-  }
-
-  69% {
-    transform: translate(-0.59%, 15.27%);
-  }
-
-  76% {
-    transform: translate(-1.92%, -4.68%);
-  }
-
-  83% {
-    transform: translate(9.38%, 0.96%);
-  }
-
-  90% {
-    transform: translate(-4.55%, 1.98%);
-  }
+  44% { transform: translate(1.33%, 6.75%); }
+  53% { transform: translate(-16.67%, -0.54%); }
+  61% { transform: translate(3.66%, -2.46%); }
+  69% { transform: translate(-0.59%, 15.27%); }
+  76% { transform: translate(-1.92%, -4.68%); }
+  83% { transform: translate(9.38%, 0.96%); }
+  90% { transform: translate(-4.55%, 1.98%); }
 }
 
 @keyframes worm {
-  from {
-    stroke-dashoffset: 10;
-  }
-
-  25% {
-    stroke-dashoffset: 295;
-  }
-
-  to {
-    stroke-dashoffset: 1165;
-  }
+  from { stroke-dashoffset: 10; }
+  25% { stroke-dashoffset: 295; }
+  to { stroke-dashoffset: 1165; }
 }
+
+/* Rotate animation for SVG loader */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Optional: Apply rotation to loader (if desired) */
+.pl {
+  animation: rotate 5s linear infinite;
+}
+
+
 
 /* Style the scrollbar */
 ::-webkit-scrollbar {
@@ -154,8 +148,6 @@ body {
 
 .navbar {
   z-index: 98;
-  position: fixed;
-  /* Keeps the navbar fixed at the top */
   top: 0;
   left: 0;
   width: 100%;
@@ -316,8 +308,6 @@ body {
   align-items: center;
   gap: 20px;
   position: fixed;
-  z-index: 98;
-
 }
 
 .socialicondesign a {
@@ -355,7 +345,6 @@ body {
   align-items: center;
   gap: 105px;
   position: fixed;
-  z-index: 98;
 }
 
 .email h1 {
@@ -386,7 +375,7 @@ body {
   font-weight: 400;
   color: #64ffda;
   word-spacing: 6px;
-  margin-top: 8%;
+  margin-top: 2%;
 }
 
 .page1 h2 {
@@ -499,21 +488,21 @@ body {
 .contact {
   position: relative;
   background-color: #64ffda;
-  height: 8vh;
+  height: 7vh;
   width: 10vw;
   margin-top: 2%;
   border-radius: 5px;
   display: flex;
-  z-index: 999;
 }
 
 .btn {
   background-color: #0A192F;
-  height: 8vh;
+  height: 7vh;
   width: 10vw;
-  display: flex;
-  justify-content: center;
   border: 2px solid #64ffda;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   border-radius: 5px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
@@ -523,6 +512,7 @@ body {
 .btn h1 {
   font-size: 1.3vw;
   font-weight: 400;
+  margin-top: -2%;
 }
 
 

@@ -1,98 +1,81 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const loader = document.querySelector('.loader');
-  const body = document.body;
-
-  // Disable scrolling while loading
-  body.style.overflow = 'hidden';
-
-  // Loader animation and removal
-  setTimeout(() => {
+window.onload = function () {
+  // Set a timeout to simulate loading time
+  setTimeout(function () {
+    const loader = document.getElementById('loader');
+    
+    // Animate the loader upwards
     loader.style.transform = 'translateY(-100%)';
     loader.style.opacity = '0';
-    loader.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
+    loader.style.transition = 'transform 1s ease-in-out, opacity 0.5s ease-in-out';
 
-    setTimeout(() => {
-      loader.remove(); // Completely remove loader
-      body.style.overflowY = 'auto'; // Enable scrolling
-    }, 800); // Match the transition duration
-  }, 2300);
-});
+    // After the animation ends, hide the loader and show the content
+    loader.addEventListener('transitionend', function () {
+      loader.style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+      
+      // Create a GSAP timeline for all animations with a 3-second delay
+      const tl = gsap.timeline({ delay: 0.2 }); // Delay added here
 
-window.addEventListener('load', () => {
-  gsap.registerPlugin(ScrollTrigger);
+      // Animating the elements one by one with GSAP
+      tl.from("#page1 h1", {
+        opacity: 0, 
+        y: 50, 
+        duration: 1, 
+        ease: "power2.out"
+      },"sh")
+      .from("#page1 h2", {
+        opacity: 0, 
+        y: 50, 
+        duration: 1, 
+        ease: "power2.out"
+      },"sh")
+      .from("#page1 h3", {
+        opacity: 0, 
+        y: 50, 
+        duration: 1, 
+        ease: "power2.out"
+      },"sh")
+      .from("#page1 p", {
+        opacity: 0, 
+        y: 50, 
+        duration: 1, 
+        ease: "power2.out"
+      },"sh")
+      
+      .from(".animated-text-container", {
+        opacity: 0, 
+        y: 50, 
+        duration: 1, 
+        ease: "power2.out"
+      },"sh")
+      .from(".contact", {
+        opacity: 0, 
+        y: 50, 
+        duration: 1, 
+        ease: "power2.out"
+      },"sh")
+      .from(".profilecontainer", {
+        opacity: 0, 
+        scale: 0.5, 
+        duration: 1, 
+        ease: "power2.out"
+      },"sh")
+      .from(".socialicondesign", {
+        opacity: 0, 
+        scale: 0.5, 
+        duration: 1, 
+        ease: "power2.out"
+      }, "sh")
+      .from(".email", {
+        opacity: 0, 
+        scale: 0.5, 
+        duration: 1, 
+        ease: "power2.out"
+      }, "sh")
+    });
+  }, 3000); // 3 seconds delay before starting the animations
+};
 
-  // Scroll-triggered navbar hide/show
-  gsap.to('.navbar', {
-    yPercent: -100,
-    scrollTrigger: {
-      trigger: '.navbar',
-      start: 'top top',
-      end: '+=200',
-      scrub: true,
-    },
-  });
-
-  // Timeline for page animations
-  const tl = gsap.timeline({
-    delay: 2.5, // Align animations to start after the loader
-  });
-
-  // Navbar animation
-  tl.from('.navbar', {
-    opacity: 0,
-    y: -15,
-    duration: 0.6,
-    ease: 'power4.out',
-  })
-    .from('.nav-links li', {
-      opacity: 0,
-      y: -30,
-      stagger: 0.2,
-      ease: 'power4.out',
-    }, '-=0.4') // Overlap slightly with navbar animation
-
-    // Page 1 elements (Headings, Paragraphs)
-    .from('.page1 h1, .page1 h2, .page1 h3, .page1 p', {
-      opacity: 0,
-      y: 30,
-      duration: 0.7,
-      stagger: 0.2,
-      ease: 'power4.out',
-    }, '-=0.2') // Slight overlap for smoother transition
-
-    // Profile container animation
-    .from('.profilecontainer', {
-      opacity: 0,
-      scale: 0.9,
-      duration: 0.2,
-      ease: 'power4.out',
-    }, 'sh') // Aligned with page elements
-
-    // Contact section animation
-    .from('.contact', {
-      opacity: 0,
-      scale: 0.8,
-      duration: 0.2,
-      ease: 'power4.out',
-    }, 'sh') // Slightly after profile container
-
-    // Social icons
-    .from('.socialicondesign', {
-      opacity: 0,
-      y: 50,
-      stagger: 0.3,
-      duration: 0.6,
-      ease: 'power4.out',
-    }, '-=0.3')
-
-    // Email animation
-    .from('.email', {
-      opacity: 0,
-      y: 30,
-      duration: 0.6,
-      ease: 'power4.out',
-    }, '-=0.4');
-});
 
 
   // Words to cycle through
