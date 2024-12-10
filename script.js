@@ -14,27 +14,27 @@ window.onload = function () {
       document.getElementById('content').style.display = 'block';
       
       // Create a GSAP timeline for all animations with a 3-second delay
-      const tl = gsap.timeline({ delay: 0 }); // 0.2s delay before starting the animations
+      const tl = gsap.timeline(); // 0.2s delay before starting the animations
 
       // Animating the navbar with stagger
       tl.from(".navbar", {
         opacity: 0, 
         y: -10, 
-        duration: 1, 
+        duration: 0.3, 
         ease: "power2.out"
       })
       
       .from(".logo", {
         opacity: 0, 
         y: -20, 
-        duration: 0.8, 
+        duration: 0.3, 
         stagger: 0.1, // Stagger each list item's animation by 0.1 seconds
         ease: "power2.out"
       }, "shh")
       .from(".nav-links li", {
         opacity: 0, 
         y: -20, 
-        duration: 0.4, 
+        duration: 0.3, 
         stagger: 0.1, // Stagger each list item's animation by 0.1 seconds
         ease: "power2.out"
       }, "shh")
@@ -42,7 +42,7 @@ window.onload = function () {
       .from(".box", {
         opacity: 0, 
         y: -20, 
-        duration: 0.4, 
+        duration: 0.3, 
         stagger: 0.1, // Stagger each list item's animation by 0.1 seconds
         ease: "power2.out"
       }, "shh")
@@ -102,7 +102,7 @@ window.onload = function () {
         ease: "power2.out"
       }, "sh");
     });
-  }, 1000); // 3 seconds delay before starting the animations
+  }, 500); // 3 seconds delay before starting the animations
 };
 
 
