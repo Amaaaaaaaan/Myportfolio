@@ -102,7 +102,7 @@ window.onload = function () {
         ease: "power2.out"
       }, "sh");
     });
-  }, 500); // 3 seconds delay before starting the animations
+  }, 700); // 3 seconds delay before starting the animations
 };
 
 
