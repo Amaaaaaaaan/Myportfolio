@@ -875,8 +875,10 @@ margin-left: -5%;
 
 
 .page3 {
-  height: 350vh;
+  min-height: 100vh; /* ensure at least full viewport height */
+  height: auto;     /* let content determine actual height */
   width: 100vw;
+  padding-bottom: 8vh; /* give breathing room at the bottom for added projects */
 }
 
 .page3 h1 {
@@ -1130,7 +1132,8 @@ margin-left: -5%;
 @media (min-width: 481px) and (max-width: 1024px) {
   .page3 {
     width: 100vw;
-    height: 400vh;
+    height: auto; /* let content determine height on tablet */
+    padding-bottom: 8vh;
   }
   
   .page3 h1 {
