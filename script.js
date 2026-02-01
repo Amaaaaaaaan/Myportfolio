@@ -13,6 +13,7 @@ window.onload = function () {
       loader.style.display = 'none';
       document.getElementById('content').style.display = 'block';
       
+       document.getElementById('page3').style.opacity = '1';
       // Create a GSAP timeline for all animations with a 3-second delay
       const tl = gsap.timeline(); // 0.2s delay before starting the animations
 
@@ -103,7 +104,11 @@ window.onload = function () {
       }, "sh");
     });
   }, 1000); // 3 seconds delay before starting the animations
+
 };
+
+
+
 
 
 
