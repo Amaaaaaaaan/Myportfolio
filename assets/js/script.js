@@ -229,3 +229,75 @@ contactBtn.addEventListener('click', function (e) {
   // Scroll to page4 smoothly
   page4.scrollIntoView({ behavior: 'smooth' });
 });
+
+// ===== PAGE 2: SKILLS ANIMATION =====
+// Animate skill cards when they come into view
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const skillCard = entry.target;
+      
+      // Animate the card
+      gsap.from(skillCard, {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        ease: "power2.out"
+      });
+
+      // Stop observing this element
+      skillObserver.unobserve(skillCard);
+    }
+  });
+}, observerOptions);
+
+// Observe all skill cards
+document.querySelectorAll('.skill-card').forEach(card => {
+  skillObserver.observe(card);
+});
+
+// Add interactive click effect
+document.querySelectorAll('.skill-card').forEach(card => {
+  card.addEventListener('click', function() {
+    // Add pulse animation on click
+    gsap.to(this, {
+      scale: 1.05,
+      duration: 0.3,
+      yoyo: true,
+      repeat: 1,
+      ease: "power2.out"
+    });
+  });
+});
+
+// Animate page2 header on scroll into view
+const page2Header = document.querySelector('.skills-header');
+const page2Observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      gsap.from('.skills-title', {
+        opacity: 0,
+        y: -30,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+      gsap.from('.skills-subtitle', {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.2,
+        ease: "power2.out"
+      });
+      page2Observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+if (page2Header) {
+  page2Observer.observe(page2Header);
+}

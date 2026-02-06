@@ -8,7 +8,7 @@
 
 
   <!-- External Stylesheets -->
-  <link rel="stylesheet" href="style.css"> <!-- Custom stylesheet for your project -->
+  <link rel="stylesheet" href="assets/css/style.css"> <!-- Custom stylesheet for your project -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
   <!-- Remix icon set -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -56,7 +56,7 @@
     <nav class="navbar">
       <div class="left">
         <div class="logo">
-          <img src="hexagon-geometrical-shape-outline-svgrepo-com.svg" alt="Logo">
+          <img src="assets/images/hexagon-geometrical-shape-outline-svgrepo-com.svg" alt="Logo">
           <span>A</span>
         </div>
       </div>
@@ -68,7 +68,7 @@
           <li><a href="#page4"><span>04.</span> Contact</a></li>
         </ul>
         <div class="box">
-          <a href="Aman updated resume.pdf" class="resume-btn" target="_blank">Resume</a>
+          <a href="docs/Aman updated resume.pdf" class="resume-btn" target="_blank">Resume</a>
         </div>
       </div>
     </nav>
@@ -128,93 +128,167 @@
           <div class="circle small"></div>
           <div class="pulse"></div>
         </div>
-        <img class="profile" src="1733216516393-removebg-preview (1).png" alt="Profile Image">
+        <img class="profile" src="assets/images/1733216516393-removebg-preview (1).png" alt="Profile Image">
       </div>
 
     </div>
   <div id="page2" class="page2">
-  <div class="skills-container">
-    <h2 class="skills-title">My Skills</h2>
-    <div class="skills-grid">
-
-      <div class="skill">
-        <i class="fab fa-cuttlefish"></i>
-        <h3>C++</h3>
+    <div class="skills-container">
+      <div class="skills-header">
+        <h2 class="skills-title">My Skills</h2>
+        <p class="skills-subtitle">Expertise & Technologies</p>
       </div>
 
-      <div class="skill">
-        <i class="fab fa-node"></i>
-        <h3>Node.js</h3>
+      <!-- Frontend Section -->
+      <div class="skill-category">
+        <h3 class="category-title">Frontend Development</h3>
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="React">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-react"></i>
+            </div>
+            <h4>React</h4>
+          </div>
+
+          <div class="skill-card" data-skill="JavaScript">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-js-square"></i>
+            </div>
+            <h4>JavaScript</h4>
+          </div>
+
+          <div class="skill-card" data-skill="HTML">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-html5"></i>
+            </div>
+            <h4>HTML</h4>
+          </div>
+
+          <div class="skill-card" data-skill="CSS">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-css3-alt"></i>
+            </div>
+            <h4>CSS</h4>
+          </div>
+
+          <div class="skill-card" data-skill="Tailwind">
+            <div class="skill-icon-wrapper">
+              <img src="assets/images/tailwind-css.svg" alt="Tailwind CSS Logo" class="skill-img">
+            </div>
+            <h4>Tailwind</h4>
+          </div>
+
+        </div>
       </div>
 
-      <div class="skill">
-        <img src="pngwing.com.png" alt="">
-        <h3>Express.js</h3>
+      <!-- Backend Section -->
+      <div class="skill-category">
+        <h3 class="category-title">Backend Development</h3>
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="Node.js">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-node"></i>
+            </div>
+            <h4>Node.js</h4>
+          </div>
+
+          <div class="skill-card" data-skill="Express.js">
+            <div class="skill-icon-wrapper">
+              <i class="fas fa-server"></i>
+            </div>
+            <h4>Express.js</h4>
+          </div>
+
+          <div class="skill-card" data-skill="MongoDB">
+            <div class="skill-icon-wrapper">
+              <i class="fas fa-database"></i>
+            </div>
+            <h4>MongoDB</h4>
+          </div>
+
+          <div class="skill-card" data-skill="REST APIs">
+            <div class="skill-icon-wrapper">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h4>REST APIs</h4>
+          </div>
+
+          <div class="skill-card" data-skill="Socket.io">
+            <div class="skill-icon-wrapper">
+              <i class="fas fa-plug"></i>
+            </div>
+            <h4>Socket.io</h4>
+          </div>
+
+          <div class="skill-card" data-skill="WebSockets">
+            <div class="skill-icon-wrapper">
+              <i class="fas fa-exchange-alt"></i>
+            </div>
+            <h4>WebSockets</h4>
+          </div>
+        </div>
       </div>
 
-      <div class="skill">
-        <i class="fas fa-database"></i>
-        <h3>MongoDB</h3>
-      </div>
+      <!-- Tools & Languages Section -->
+      <div class="skill-category">
+        <h3 class="category-title">Tools & Languages</h3>
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="C++">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-cuttlefish"></i>
+            </div>
+            <h4>C++</h4>
+          </div>
 
-      <div class="skill">
-        <i class="fab fa-react"></i>
-        <h3>React</h3>
-      </div>
+          <div class="skill-card" data-skill="Git">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-git-alt"></i>
+            </div>
+            <h4>Git</h4>
+          </div>
 
-      <div class="skill">
-        <i class="fab fa-js-square"></i>
-        <h3>JavaScript</h3>
-      </div>
+          <div class="skill-card" data-skill="GitHub">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-github"></i>
+            </div>
+            <h4>GitHub</h4>
+          </div>
 
-      <div class="skill">
-        <i class="fab fa-html5"></i>
-        <h3>HTML</h3>
-      </div>
+          
 
-      <div class="skill">
-        <img src="tailwind-css.svg" alt="Tailwind CSS Logo">
-        <h3>Tailwind</h3>
-      </div>
+          <div class="skill-card" data-skill="Postman">
+            <div class="skill-icon-wrapper">
+              <i class="fas fa-cube"></i>
+            </div>
+            <h4>Postman</h4>
+          </div>
 
-      <div class="skill">
-        <i class="fab fa-css3-alt"></i>
-        <h3>CSS</h3>
-      </div>
+          <div class="skill-card" data-skill="VS Code">
+            <div class="skill-icon-wrapper">
+              <i class="fas fa-code"></i>
+            </div>
+            <h4>VS Code</h4>
+          </div>
 
-      <div class="skill">
-        <i class="fab fa-git-alt"></i>
-        <h3>Git</h3>
-      </div>
+  
 
-      <div class="skill">
-        <i class="fab fa-github"></i>
-        <h3>GitHub</h3>
-      </div>
+          <div class="skill-card" data-skill="JWT Auth">
+            <div class="skill-icon-wrapper">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h4>JWT Auth</h4>
+          </div>
 
-      <div class="skill">
-        <i class="fas fa-cloud"></i>
-        <h3>REST APIs</h3>
+          <div class="skill-card" data-skill="npm">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-npm"></i>
+            </div>
+            <h4>npm</h4>
+          </div>
+        </div>
       </div>
-
-      <div class="skill">
-        <img src="./socket io.png" alt="">
-        <h3>Socket.io</h3>
-      </div>
-
-      <div class="skill">
-        <i class="fas fa-exchange-alt"></i>
-        <h3>WebSockets</h3>
-      </div>
-
-      <div class="skill">
-        <i class="fas fa-sync-alt"></i>
-        <h3>Redux</h3>
-      </div>
-
     </div>
   </div>
-</div>
 
     </div>
     <div id="page3" class="page3">
@@ -222,7 +296,7 @@
       <div class="linee"></div>
       <div class="pjt1">
         <div class="left1">
-          <img src="Screenshot 2024-11-27 211645.png" alt="Descriptive Image">
+          <img src="assets/images/Screenshot 2024-11-27 211645.png" alt="Descriptive Image">
         </div>
         <div class="right1">
           <h1>Featured Project 1</h1>
@@ -301,7 +375,7 @@ Built with a scalable full-stack architecture and deployed on
           </div>
         </div>
         <div class="left2">
-          <img src="Screenshot 2024-11-18 231621.png" alt="Descriptive Image">
+          <img src="assets/images/Screenshot 2024-11-18 231621.png" alt="Descriptive Image">
         </div>
 
 
@@ -309,7 +383,7 @@ Built with a scalable full-stack architecture and deployed on
       </div>
       <div class="pjt1">
         <div class="left1">
-          <img src="Screenshot 2024-11-27 211448.png" alt="Descriptive Image">
+          <img src="assets/images/Screenshot 2024-11-27 211448.png" alt="Descriptive Image">
         </div>
         <div class="right1">
           <h1>Featured Project 3</h1>
@@ -381,15 +455,23 @@ Built with a scalable full-stack architecture and deployed on
           </div>
         </div>
         <div class="left2">
-          <img src="Screenshot 2024-08-15 183343.png" alt="Descriptive Image">
+          <img src="assets/images/Screenshot 2024-08-15 183343.png" alt="Descriptive Image">
         </div>
 
 
 
       </div>
+
+      <!-- Freelancing Projects Section -->
+      <div class="freelance-section">
+        <h2 class="freelance-title">Freelancing Projects</h2>
+        <p class="freelance-subtitle">Client Work & Professional Services</p>
+        <div class="freelance-divider"></div>
+      </div>
+
       <div class="pjt1">
         <div class="left1">
-          <img src="Screenshot 2024-11-27 211734.png" alt="Descriptive Image">
+          <img src="assets/images/Screenshot 2024-11-27 211734.png" alt="Descriptive Image">
         </div>
         <div class="right1">
           <h1>Featured Project 5</h1>
@@ -459,7 +541,7 @@ Built with a scalable full-stack architecture and deployed on
           </div>
         </div>
         <div class="left2">
-          <img src="image.png" alt="Descriptive Image">
+          <img src="./assets/images/image.png" alt="Descriptive Image">
         </div>
 
 
@@ -541,7 +623,7 @@ Built with a scalable full-stack architecture and deployed on
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
